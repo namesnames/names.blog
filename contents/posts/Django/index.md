@@ -1,3 +1,4 @@
+---
 title: "Django (파이썬 배경지식)"
 description: "Django (파이썬 배경지식)"
 date: 2021-04-03
@@ -6,7 +7,9 @@ tags:
   - Django
   - python
 
-series: "gatsby-starter-hoodie 로 블로그 시작하기"
+series: "python"
+---
+
 장고=웹프레임워크=웹서비스를 쉽게 만들어주는 기계
 # 파이썬 배경지식
 ## 딕셔너리 
