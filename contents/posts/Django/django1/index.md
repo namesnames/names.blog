@@ -1,7 +1,8 @@
 ---
-title: "Django (파이썬 배경지식)"
+title: "[Django] 파이썬 배경지식"
 description: "Django (파이썬 배경지식)"
 date: 2022-05-16
+update: 2022-05-16
 tags:
   - Django
   - python

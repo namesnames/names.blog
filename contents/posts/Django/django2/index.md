@@ -1,6 +1,7 @@
 ---
-title: "1주차 -2 feedback"
+title: "[Django] Tips"
 date: 2022-05-20
+update: 2022-05-20
 tags:
   - Django
 
