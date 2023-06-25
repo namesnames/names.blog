@@ -1,13 +1,12 @@
 ---
 title: "Django (파이썬 배경지식)"
 description: "Django (파이썬 배경지식)"
-date: 2021-04-03
-update: 2022-06-23
+date: 2022-05-16
 tags:
   - Django
   - python
 
-series: "python"
+series: "Django"
 ---
 
 장고=웹프레임워크=웹서비스를 쉽게 만들어주는 기계

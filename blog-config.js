@@ -1,8 +1,8 @@
 module.exports = {
-  title: "names",
+  title: "namesnames.blog",
   description: "Backend Developer",
-  author: "names",
-  siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
+  author: "namesnames",
+  siteUrl: "https://main--prismatic-madeleine-0c641e.netlify.app/",
   links: {
     github: "https://github.com/namesnames",
     linkedIn: "https://linkedin.com",
@@ -11,7 +11,7 @@ module.exports = {
     email: "mailto:97gkswn@gmail.com",
   },
   utterances: {
-    repo: "devHudi/gatsby-starter-hoodie",
+    repo: "namesnames/names.blog",
     type: "pathname",
   },
 }
