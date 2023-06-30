@@ -2,7 +2,7 @@ module.exports = {
   title: "namesnames.blog",
   description: "Backend Developer",
   author: "namesnames",
-  siteUrl: "https://main--prismatic-madeleine-0c641e.netlify.app/",
+  siteUrl: "https://namesnames.netlify.app/",
   links: {
     github: "https://github.com/namesnames",
     linkedIn: "https://linkedin.com",
