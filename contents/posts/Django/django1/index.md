@@ -5,7 +5,6 @@ date: 2022-05-16
 update: 2022-05-16
 tags:
   - Django
-  - python
 
 series: "Django"
 ---
