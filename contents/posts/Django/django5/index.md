@@ -1,6 +1,6 @@
 ---
-title: "[Django] 블로그사이트 기능추가"
-description: "Django 블로그사이트 기능추가"
+title: "[Django] Restframework serializer"
+description: "Django Restframework serializer"
 date: 2022-07-13
 update: 2022-07-13
 tags:
