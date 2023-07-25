@@ -9,7 +9,7 @@ tags:
 series: "컴퓨터네트워크"
 ---
 
-# DHCP (Dynamic Host Configuration Protocol)
+## DHCP (Dynamic Host Configuration Protocol)
 IP주소 얻을 때의 프로토콜
 현재 컴퓨터를 사용하는 사람에게 IP를 주고 
 안쓰고 있으면 뺐어서 다른 사람에게 IP주고 이런식으로 동적으로 사용하게함
@@ -22,12 +22,12 @@ request
 ack 
 의 과정이 있음
 
-# HOL blocking
+## HOL blocking
 >![](https://velog.velcdn.com/images/97gkswn/post/ca14986c-7381-45ef-903b-283b9c7fb0f7/image.png)
 input buffer에서 queue의 앞에 있는 녀석이 자기 차례 기다리느라 뒤에있는 친구가 못감 -> delay 발생
 
-# 네트워크 (패킷 교환) 알고리즘
-## link state routing algorithm
+## 네트워크 (패킷 교환) 알고리즘
+### link state routing algorithm
 자신이 목적지까지의 향하는데의 모든 node들의 상태를 다 알고있음 
 (내가 몇번 노드와 연결되어있고 cost는 몇이 드는지)
 
@@ -36,7 +36,7 @@ input buffer에서 queue의 앞에 있는 녀석이 자기 차례 기다리느�
 
 ex) 다익스트라(Dijkstra)
 
-## distance vector routing algorithm
+### distance vector routing algorithm
 "내가 어디로 갈 수 있어, 몇 cost로" 의 내용을 주변에만 뿌림
 link state 와 다르게 모든 node의 정보를 알지못함
 
