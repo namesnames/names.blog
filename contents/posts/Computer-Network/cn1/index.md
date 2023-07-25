@@ -1,6 +1,6 @@
 ---
-title: "컴퓨터 네트워크 Ch1 (문풀포함)"
-description: "컴퓨터 네트워크 Ch1 (문풀포함)"
+title: "컴퓨터 네트워크 Ch1"
+description: "컴퓨터 네트워크 Ch1"
 date: 2022-10-16
 update: 2023-07-25
 tags:
