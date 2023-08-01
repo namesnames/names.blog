@@ -12,6 +12,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-robots-txt`,
+    'gatsby-plugin-sitemap',   /* 구글 검색에 뜨기위해
+    'gatsby-plugin-netlify',     추가한 코드 */
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
