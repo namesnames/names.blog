@@ -1,6 +1,6 @@
 ---
-title: "컴퓨터 구조 [1]"
-description: "컴퓨터 구조 [1]"
+title: "컴퓨터 구조 알아야 할까? [컴퓨터 구조]"
+description: "컴퓨터 구조 알아야 할까? [컴퓨터 구조]"
 date: 2022-07-25
 update: 2023-07-25
 tags:

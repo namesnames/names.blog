@@ -1,6 +1,6 @@
 ---
-title: "컴퓨터 네트워크 Ch1"
-description: "컴퓨터 네트워크 Ch1"
+title: "5계층 [애플리케이션 계층] part1"
+description: "5계층 [애플리케이션 계층] part1"
 date: 2022-10-16
 update: 2023-07-25
 tags:
