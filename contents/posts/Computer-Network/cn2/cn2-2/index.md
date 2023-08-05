@@ -15,8 +15,10 @@ series: "컴퓨터네트워크"
 그 2개의 방법은 TCP와 UDP입니다.
 - TCP (Transmission Control Protocol)
 - UDP (User Datagram Protocol)
+
 ## TCP vs UDP
 ![](https://velog.velcdn.com/images/97gkswn/post/0c173ae2-fc70-4223-a007-1da4fd212cb2/image.png)
+
 ### TCP
 1. 애플리케이션 메시지를 전송하기 전에 클라이언트와 서버가 패킷이 곧 갈테니까 준비해! 라는 식의 정보를 교환함 (핸드쉐이킹 과정)
 2. Reliable transport -> 비트가 바뀌거나 data loss를 허용하지 않는 프로토콜임 (신뢰할 수 있음)
