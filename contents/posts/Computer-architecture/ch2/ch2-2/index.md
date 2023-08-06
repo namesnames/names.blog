@@ -1,6 +1,6 @@
 ---
-title: "명령어의 구조 [ 컴퓨터 구조]"
-description: "명령어의 구조 [ 컴퓨터 구조]"
+title: "명령어의 구조 [컴퓨터 구조]"
+description: "명령어의 구조 [컴퓨터 구조]"
 date: 2022-07-28
 update: 2023-07-28
 tags:
