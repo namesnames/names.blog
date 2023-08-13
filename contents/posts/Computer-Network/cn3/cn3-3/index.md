@@ -17,6 +17,7 @@ RDT(reliable datatransfer protocol)
 - 트랜스포트 계층에서는 신뢰성 있는 데이터교환을 하고싶지만 그 하위계층에서는 신뢰성을 보장할 수 없기 때문에 트랜스포트 계층에서는 RDT프로토콜을 이용합니다.
 
 완전히 신뢰적인 데이터 전송 프로토콜에 도달하기 위해 조금씩 더 복잡해지는 일련의 프로토콜들을 알아볼 것입니다.
+
 ## rdt 프로토콜의 송수신
 >rdt 프로토콜의 송수신
 ![](https://velog.velcdn.com/images/97gkswn/post/7ce8db05-6e88-4d61-8431-51b9298db834/image.png)

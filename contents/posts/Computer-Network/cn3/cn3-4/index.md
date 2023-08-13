@@ -1,8 +1,8 @@
 ---
 title: "4계층 [트랜스포트 계층] part4 연결지항형 트랜스포트 TCP"
 description: "4계층 [트랜스포트 계층] part4 연결지항형 트랜스포트 TCP"
-date: 2023-08-06
-update: 2023-08-06
+date: 2023-08-07
+update: 2023-08-07
 tags:
   - 컴퓨터네트워크
 

@@ -1,46 +1,104 @@
 ---
-title: "컴퓨터 네트워크 CH4"
-description: "컴퓨터 네트워크 CH4"
-date: 2022-12-01
-update: 2022-12-01
+title: "3계층 [네트워크 계층] part 1 포워딩과 라우팅"
+description: "3계층 [네트워크 계층] part 1 포워딩과 라우팅"
+date: 2023-08-10
+update: 2023-08-10
 tags:
   - 컴퓨터네트워크
 
 series: "컴퓨터네트워크"
 ---
 
-## DHCP (Dynamic Host Configuration Protocol)
-IP주소 얻을 때의 프로토콜
-현재 컴퓨터를 사용하는 사람에게 IP를 주고 
-안쓰고 있으면 뺐어서 다른 사람에게 IP주고 이런식으로 동적으로 사용하게함
+## 포워딩과 라우팅
 
->![](https://velog.velcdn.com/images/97gkswn/post/e7874c7e-576b-45f0-b50d-c07f1553ac4e/image.png)
-![](https://velog.velcdn.com/images/97gkswn/post/017dbdd7-8a23-463c-8258-06c991fef0e9/image.png)
-discover
-offer
-request
-ack 
-의 과정이 있음
+>네트워크 계층의 근본적인 역할은 매우 단순합니다.
+출발지 호스트에서 도착지 호스트로 패킷을 전달하는 것입니다.
 
-## HOL blocking
+이를 위한 네트워크 계층의 중요한 기능 두 가지를 정의하겠습니다.
+
+### 포워딩
+
+![](https://velog.velcdn.com/images/97gkswn/post/368d2a92-ad2e-48fb-bcec-899f17cf9fb4/image.png)
+
+`포워딩(전달)` : 라우터에는 패킷을 받는 곳인 입력 포트와 패킷을 보내는 곳인 출력 포트가 있습니다. 라우터의 입력 포트에서 출력 포트로 패킷을 이동시키는 것을 말합니다. 
+위의 사진으로 보면 왼쪽에서 패킷을 받고 오른쪽에 1번,2번,3번 링크 중에 하나로 `포워딩` 한다고 보시면 됩니다.
+근데 라우터가 뭘 어떻게 알고 패킷을 1번으로 보낼지, 2번으로 보낼지를 결정할까요?
+
+정답은 '`포워딩 테이블`이라는 것을 보고 결정한다' 입니다.
+`포워딩 테이블` 또는 `라우팅 테이블`이라고 불리는데 
+`포워딩 테이블`을 참고하여 포워딩을 해서 `포워딩 테이블`이라고 불리기도 하고
+`포워딩 테이블`이 `라우팅 알고리즘`을 통해 만들어지기 때문에 `라우팅 테이블`이라고 불리기도 합니다.
+
+>그래서 포워딩 테이블이 뭐냐? 하면 아래와 같이 생겼습니다.
+![](https://velog.velcdn.com/images/97gkswn/post/14750827-f801-4bcf-bc61-6f42c06f63aa/image.png)
+도착한 패킷의 헤더값을 보고 테이블을 참고해 그 테이블에 맞는 방향에 포워딩을 하는 것입니다. 
+
+
+### 라우팅
+
+그럼 저희는 `라우팅` 을 이렇게 정의할 수 있겠습니다.
+`라우팅`이란 `라우팅 알고리즘을 이용하여 포워딩 테이블을 만드는 작업이다`
+
+## 라우터의 구조
+
+>![](https://velog.velcdn.com/images/97gkswn/post/0d8c3d3f-38ae-433e-8115-a4915ca506cc/image.png)
+1. 입력 포트 
+2. 스위치 구조 -> 입력 포트와 출력 포트를 연결한다.
+3. 출력 포트
+4. 라우팅 프로세서
+
+### 1. 입력 포트 -> 스위치
+
+> 입력 포트에서의 처리
+![](https://velog.velcdn.com/images/97gkswn/post/2a5b2074-3ae2-46fa-927b-b6416ad91f68/image.png)
+
+>![](https://velog.velcdn.com/images/97gkswn/post/eddf0527-a8bc-4f38-9f07-7a74db148d81/image.png)
+패킷이 오면 목적지를 보고 포워딩을 해야합니다. 
+근데 32비트 IP주소일 경우 위와 같이 40억개의 경우의 수가 생깁니다..
+그거에 맞춰서 하나하나 링크를 만들 수는 없겠죠?
+그래서 어디부터 어디까지는 0번으로 가고 어디부터 어디까지는 1번으로 가게끔 했습니다
+![](https://velog.velcdn.com/images/97gkswn/post/7843781a-bfec-45f4-b730-168708992713/image.png)
+이렇게 공통되는 앞부분까지 보고 포워딩을 해준다고 합니다!
+- 근데 만약에 앞의 21자리까지 보니 2번으로 보내야 할 것 같고 24자리까지를 보니 3번으로 보내야할 것 같다면?
+-> `최장 프리픽스 매치 규칙`이 적용되어서 더 긴 것에 맞는 쪽으로 갑니다!
+-> 따라서 24자리까지 맞았던 3번으로 포워딩하게 됩니다!
+
+
+### 2. 스위칭 
+
+>스위치 구조는  패킷이 입력 포트에서 출력 포트로 실제로 스위칭(포워딩)되는 구조를 통과하므로 라우터의 핵심입니다.
+
+>![](https://velog.velcdn.com/images/97gkswn/post/b1901cb1-b7a0-4495-b818-1decff298fe5/image.png)
+메모리 / 버스/ 상호연결 네트워크 등 여러가지 방법으로 스위칭을 수행할 수 있습니다.
+
+### 3. 출력 포트
+
+>출력 포트에서의 처리
+![](https://velog.velcdn.com/images/97gkswn/post/9c674373-d43e-47f6-a6e7-3c6fe4649e72/image.png)
+
+## 큐잉
+
+### 입력 큐잉
+
+#### HOL blocking
 >![](https://velog.velcdn.com/images/97gkswn/post/ca14986c-7381-45ef-903b-283b9c7fb0f7/image.png)
 input buffer에서 queue의 앞에 있는 녀석이 자기 차례 기다리느라 뒤에있는 친구가 못감 -> delay 발생
+- 위의 사진을 보면 초록패킷은 출력 버퍼로 가는 놈이 아무도 없어서 자기 혼자만 바로 들어가버리면 되는데 초록패킷 앞에 있는 빨간패킷이 못가고 있어서 초록놈도 기다리고 있는 상황 = `HOL blocking`
 
-## 네트워크 (패킷 교환) 알고리즘
-### link state routing algorithm
-자신이 목적지까지의 향하는데의 모든 node들의 상태를 다 알고있음 
-(내가 몇번 노드와 연결되어있고 cost는 몇이 드는지)
+### 출력 큐잉
 
-장점:  Convergence Time 이 짧음( Convergence Time : 라우팅 테이블에 생겨난 변화를 모든 라우터가 알 때까지 걸리는 시간 )
-단잠: 메모리 낭비 (모든 node의 정보를 알고있으므로)
+큐의 공간이 충분하지 않을 때, 즉 메모리가 충분하지 않을 때 `방금 온 패킷을 제거` 하거나 `이미 출력 큐에서 대기하고 있는 패킷을 제거해야하는데` 
+`패킷 스케줄러`가 전송 대기중인 패킷 중 하나의 패킷을 선택하여 큐에서 제거한다
 
-ex) 다익스트라(Dijkstra)
 
-### distance vector routing algorithm
-"내가 어디로 갈 수 있어, 몇 cost로" 의 내용을 주변에만 뿌림
-link state 와 다르게 모든 node의 정보를 알지못함
+## 패킷 스케줄러
 
-장점 : 메모리가 절약됨
-단점 : Convergence Time이 느리다. ( Convergence Time : 라우팅 테이블에 생겨난 변화를 모든 라우터가 알 때까지 걸리는 시간 )
+대기 패킷들을 처리하는 방법들
+### FIFO
+### 우선순위 큐잉
+### 라운드 로빈과 WFQ
 
-ex) Bellman-ford
+
+
+## 참고
+https://nenunena.tistory.com/52
