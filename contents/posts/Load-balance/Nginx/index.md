@@ -6,18 +6,24 @@ update: 2023-08-28
 tags:
   - Nginx
   - 로드밸런싱
-  - K6
+  - k6
 
 ---
 
 ## 개요
 Lionz 프로젝트가 많은 양의 부하를 견디도록 로드밸런스를 설정을 해보려고 합니다.
+이전 포스팅에서 https://velog.io/@97gkswn/k6 에서 부하를 줬더니 서버가 감당하지 못하고 에러가 많이 났던 부분을 다뤘습니다.
+이번에는 로드밸런스를 적용해 많은 부하를 감당할 수 있게 해보려고 합니다!
 
 기존에 1개의 서버를 배포했을 때는 aws에서 Free Tier서버를 이용해 배포했었습니다.
 하지만 이번에 할 로드밸런스는 여러 대의 서버가 필요하기 때문에 요금이 조금 나올 것으로 생각해서 크레딧을 받아서 돈이 좀 여유있는 [네이버 클라우드](https://www.ncloud.com/)에서 진행했습니다. 
 
 최종 목표는 애플리케이션 서버 3대를 두고 앞에 로드밸런스 서버 1대를 두는 것으로 하고있습니다.
 >근데 우선 결과를 단계적으로 지켜보고 싶어서 `애플리케이션 서버 2대`를 먼저 두고 `로드밸런스 서버 1대`를 둬보도록 했습니다.
+
+### 원하는 그림
+
+![](https://velog.velcdn.com/images/97gkswn/post/9edd56a9-5031-469d-acf1-66e5a0adbbe5/image.png)
 
 ## 우선 서버 3대를 생성해보자
 [네이버 클라우드](https://www.ncloud.com/)로 가서 VPC를 하나 생성했습니다.
@@ -167,6 +173,7 @@ k6 run --vus=300 --duration 30s scenario.ts
 지금 한 대의 서버가 0.5~0.6의 CPU사용률로 실행됐던 것을 보면 단 한 대의 서버였다면 에러가 나면서 요청들이 완벽히 처리될 수가 없는게 당연하다는 생각을 하게 됩니다.
 
 이렇게 로드밸런스가 제대로 적용이된 것을 확인하면서 포스팅을 마치겠습니다! 
+다음에는 로드밸런스 서버 1대, 애플리케이션 서버 3대를 둬서 vus를 1000으로 설정해서 보내보겠습니다.
 
 ## 참고
 - https://access.redhat.com/documentation/ko-kr/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/configuring-nginx-as-an-http-load-balancer_setting-up-and-configuring-nginx
